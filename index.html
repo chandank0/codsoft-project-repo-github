@@ -5,97 +5,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECE Notes - Electronics & Communication Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         header {
-            background-color: #000000;
+            background-color: #282828;
             color: white;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+            letter-spacing: 2px;
         }
 
         nav {
             display: flex;
             justify-content: space-around;
             background-color: #1c99c3;
-            padding: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffdf00;
+            transform: scale(1.1);
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 30px auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
         }
 
         .note-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .note-item {
-            background-color: white;
-            margin: 15px;
+            background-color: #fff;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
             text-align: center;
+        }
+
+        .note-item:hover {
+            transform: translateY(-10px);
         }
 
         .note-item img {
             max-width: 100%;
             height: 150px;
+            border-radius: 10px;
             object-fit: cover;
         }
 
+        .note-item h3 {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #333;
+        }
+
         .view-note {
+            display: inline-block;
+            padding: 10px 20px;
             background-color: #28a745;
             color: white;
-            padding: 10px;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
             text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .view-note:hover {
+            background-color: #218838;
         }
 
         footer {
-            background-color:#2E8B57 ;
+            background-color: #2e8b57;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
+            padding: 20px;
+            position: relative;
             width: 100%;
+            bottom: 0;
+            margin-top: 50px;
+        }
+
+        footer h4 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
         }
 
         /* Media Query for Mobile View */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
-            }
-
-            .note-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .note-item {
-                width: 90%;
-                margin: 10px 0;
+                padding: 15px;
             }
 
             nav {
@@ -103,21 +144,15 @@
             }
 
             nav a {
-                margin: 5px 0;
-                font-size: 14px;
+                margin: 8px 0;
             }
 
-            h1, h2 {
-                font-size: 24px;
-            }
-
-            .view-note {
-                padding: 8px 12px;
-                font-size: 14px;
+            .note-grid {
+                grid-template-columns: 1fr;
             }
 
             footer {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     </style>
@@ -130,48 +165,9 @@
     </header>
 
     <nav>
-       <a href="https://chandank0.github.io/UIET_ECE_NOTES/" style="
-        text-decoration: none; 
-        padding: 10px; 
-        font-size: 20px; 
-        font-weight: bold; 
-        position: relative; 
-        display: inline-block; 
-        color: #fff; 
-        background: linear-gradient(45deg, #ff0, #f0f); 
-        -webkit-background-clip: text; 
-        color: transparent; 
-        transition: color 0.4s, transform 0.4s; 
-    " onmouseover="this.style.color='#ff0'; this.style.transform='scale(1.1)'; this.style.background='linear-gradient(45deg, #f0f, #ff0)';" onmouseout="this.style.color='transparent'; this.style.transform='scale(1)'; this.style.background='linear-gradient(45deg, #ff0, #f0f)';">GYAN SANCHAY</a>
-    
-    <a href="https://ece-csjmu.github.io/web/semester%20(1).html" style="
-        text-decoration: none; 
-        padding: 10px; 
-        font-size: 20px; 
-        font-weight: bold; 
-        position: relative; 
-        display: inline-block; 
-        color: #fff; 
-        background: linear-gradient(45deg, #ff0, #f0f); 
-        -webkit-background-clip: text; 
-        color: transparent; 
-        transition: color 0.4s, transform 0.4s; 
-    " onmouseover="this.style.color='#ff0'; this.style.transform='scale(1.1)'; this.style.background='linear-gradient(45deg, #f0f, #ff0)';" onmouseout="this.style.color='transparent'; this.style.transform='scale(1)'; this.style.background='linear-gradient(45deg, #ff0, #f0f)';">B.TECH 1ST SEM</a>
-    
-    <a href="https://youtube.com/@electroveda?feature=shared" style="
-        text-decoration: none; 
-        padding: 10px; 
-        font-size: 20px; 
-        font-weight: bold; 
-        position: relative; 
-        display: inline-block; 
-        color: #fff; 
-        background: linear-gradient(45deg, #ff0, #f0f); 
-        -webkit-background-clip: text; 
-        color: transparent; 
-        transition: color 0.4s, transform 0.4s; 
-    " onmouseover="this.style.color='#ff0'; this.style.transform='scale(1.1)'; this.style.background='linear-gradient(45deg, #f0f, #ff0)';" onmouseout="this.style.color='transparent'; this.style.transform='scale(1)'; this.style.background='linear-gradient(45deg, #ff0, #f0f)';">ELECTROVEDA</a>
-
+        <a href="https://chandank0.github.io/UIET_ECE_NOTES/">GYAN SANCHAY</a>
+        <a href="https://ece-csjmu.github.io/web/semester%20(1).html">B.TECH 1ST SEM</a>
+        <a href="https://youtube.com/@electroveda?feature=shared">ELECTROVEDA</a>
     </nav>
 
     <div class="container">
@@ -182,15 +178,13 @@
     </div>
 
     <footer>
-        <h>Hello! I'm Chandan katiyar student of 2k23-27 , the creator and owner of this website. I started this website to share valuable knowledge, resources, and insights with students and enthusiasts in the field. My journey in engineering has been filled with learning, challenges, and growth, and I aim to help others navigate this path more easily.
-In addition to my engineering background, I am also engineering student and educator & learner. Thankyou to my all senior bhaiya for providing material .
-Feel free to explore, and let's learn together! 
-</h> 
+        <h4>Hello! I'm Chandan Katiyar, a student from the 2023-2027 batch, and the creator and owner of this website.</h4>
+        <p>I started this platform to share valuable knowledge, resources, and insights with students and enthusiasts in the field of Electronics & Communication. Let's learn and grow together!</p>
         <p>© 2024 ECE Notes. All rights reserved.</p>
     </footer>
 
     <script>
-        // List of notes with Google Drive links
+        // JavaScript for dynamically adding notes
         const notes = [
             {
                 name: "Digital Electronics",
@@ -212,15 +206,14 @@ Feel free to explore, and let's learn together!
                 image: "https://via.placeholder.com/150",
                 link: "https://drive.google.com/your-link4"
             },
-        
-             {
-                name: "ECE 6th sem material ",
+            {
+                name: "ECE 6th sem material",
                 image: "https://via.placeholder.com/150",
                 link: "https://drive.google.com/drive/folders/1wSlHb3AUcven8vBEhZ4B0W5hOdh7MVAR?usp=drive_link"
             },
             {
                 name: "Mathematics",
-                image:"https://via.placeholder.com/150",
+                image: "https://via.placeholder.com/150",
                 link: "https://drive.google.com/drive/u/0/mobile/folders/1gOV865PKnRERAJjPHPaG8WJyP6s54CON?usp=share_link"
             },
             {
@@ -228,14 +221,13 @@ Feel free to explore, and let's learn together!
                 image: "https://via.placeholder.com/150",
                 link: "https://drive.google.com/your-link6"
             },
-             {
+            {
                 name: "NETWORK THEORY",
                 image: "https://via.placeholder.com/150",
                 link: "https://drive.google.com/your-link1"
             },
         ];
 
-        // Add notes to grid
         const noteGrid = document.getElementById("note-grid");
 
         notes.forEach(note => {
@@ -251,7 +243,7 @@ Feel free to explore, and let's learn together!
             noteGrid.appendChild(noteItem);
         });
     </script>
-<a></a>
+
 </body>
 
 </html>
