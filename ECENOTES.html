@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECE Notes - Electronics & Communication Notes</title>
     <style>
+        /* Add your styles here */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -82,43 +83,11 @@
             width: 100%;
         }
 
-        /* Media Query for Mobile View */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-
-            .note-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .note-item {
-                width: 90%;
-                margin: 10px 0;
-            }
-
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                margin: 5px 0;
-                font-size: 14px;
-            }
-
-            h1, h2 {
-                font-size: 24px;
-            }
-
-            .view-note {
-                padding: 8px 12px;
-                font-size: 14px;
-            }
-
-            footer {
-                font-size: 12px;
-            }
+        iframe {
+            margin-top: 20px;
+            border: none;
+            width: 100%;
+            height: 500px;
         }
     </style>
 </head>
@@ -140,6 +109,16 @@
         <div class="note-grid" id="note-grid">
             <!-- Notes will be inserted here by JavaScript -->
         </div>
+
+        <h2>Upload Your Notes</h2>
+        <!-- Embedded Google Form -->
+        <iframe
+            src="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/viewform?embedded=true"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            Loading…
+        </iframe>
     </div>
 
     <footer>
@@ -147,38 +126,17 @@
     </footer>
 
     <script>
+        // Directory where photos are saved
+        const photoRepo = "images/";
+
         // List of notes with Google Drive links
         const notes = [
-            {
-                name: "Digital Electronics",
-                image: "deld.jpg/150",
-                link: "https://drive.google.com/your-link1"
-            },
-            {
-                name: "Signals & Systems",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/your-link2"
-            },
-            {
-                name: "Control Systems",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/your-link3"
-            },
-            {
-                name: "Analog Circuits",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/your-link4"
-            },
-            {
-                name: "Mathematics",
-                image: "",
-                link: "https://drive.google.com/drive/u/0/mobile/folders/1gOV865PKnRERAJjPHPaG8WJyP6s54CON?usp=share_link"
-            },
-            {
-                name: "Mechanics",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/your-link6"
-            }
+            { name: "Digital Electronics", image: "deld.jpg", link: "https://drive.google.com/your-link1" },
+            { name: "Signals & Systems", image: "signals.jpg", link: "https://drive.google.com/your-link2" },
+            { name: "Control Systems", image: "control.jpg", link: "https://drive.google.com/your-link3" },
+            { name: "Analog Circuits", image: "analog.jpg", link: "https://drive.google.com/your-link4" },
+            { name: "Mathematics", image: "", link: "https://drive.google.com/your-link5" },
+            { name: "Mechanics", image: "mechanics.jpg", link: "https://drive.google.com/your-link6" }
         ];
 
         // Add notes to grid
@@ -188,8 +146,13 @@
             const noteItem = document.createElement("div");
             noteItem.classList.add("note-item");
 
+            // Use the photo repository for images
+            const imageSrc = note.image
+                ? `${photoRepo}${note.image}`
+                : "https://via.placeholder.com/150";
+
             noteItem.innerHTML = `
-                <img src="${note.image}" alt="${note.name}">
+                <img src="${imageSrc}" alt="${note.name}">
                 <h3>${note.name}</h3>
                 <a href="${note.link}" class="view-note" target="_blank">View Notes</a>
             `;
