@@ -11,32 +11,31 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #f6f9fc, #d9e9f8);
+            background-color: #f5f5f5;
             color: #333;
         }
 
         header {
-            background: linear-gradient(90deg, #1c99c3, #2e8b57);
+            background-image: url('https://via.placeholder.com/1920x500'); /* Replace with your header image */
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 60px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 36px;
+            font-size: 40px;
             margin: 0;
-            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background: #2e8b57;
-            padding: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background-color: #1c99c3;
+            padding: 15px 0;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -46,26 +45,12 @@
             font-weight: 500;
             font-size: 18px;
             margin: 0 15px;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease-in-out;
         }
 
         nav a:hover {
-            background: #1c99c3;
-        }
-
-        .hero {
-            background: url('https://via.placeholder.com/1200x300') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            margin-top: -10px;
-        }
-
-        .hero h2 {
-            font-size: 32px;
-            margin: 0 0 10px;
+            color: #ffdf00;
+            transform: scale(1.1);
         }
 
         .container {
@@ -74,11 +59,11 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .container h2 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 20px;
             text-align: center;
             color: #333;
@@ -91,17 +76,17 @@
         }
 
         .note-item {
-            background: white;
+            background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
         .note-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .note-item img {
@@ -112,7 +97,7 @@
         }
 
         .note-item h3 {
-            font-size: 20px;
+            font-size: 22px;
             margin: 15px 0;
             color: #333;
         }
@@ -120,51 +105,63 @@
         .view-note {
             display: inline-block;
             padding: 10px 20px;
-            background: #1c99c3;
+            background-color: #28a745;
             color: white;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 500;
-            transition: background 0.3s ease;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .view-note:hover {
-            background: #2e8b57;
+            background-color: #218838;
         }
 
         footer {
-            background: #282828;
+            background-color: #2e8b57;
             color: white;
             text-align: center;
             padding: 30px 20px;
+            margin-top: 50px;
         }
 
-        footer h4, footer p {
+        footer h4 {
+            font-size: 18px;
             margin: 10px 0;
         }
 
-        footer .social-icons {
-            margin: 15px 0;
+        footer p {
+            font-size: 14px;
+            margin: 5px 0;
         }
 
         footer .social-icons a {
-            color: white;
             margin: 0 10px;
-            font-size: 24px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
             transition: color 0.3s ease;
         }
 
         footer .social-icons a:hover {
-            color: #1c99c3;
+            color: #ffdf00;
         }
 
         @media (max-width: 768px) {
             nav {
-                flex-wrap: wrap;
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 8px 0;
             }
 
             .note-grid {
                 grid-template-columns: 1fr;
+            }
+
+            footer {
+                font-size: 14px;
             }
         }
     </style>
@@ -182,35 +179,41 @@
         <a href="https://youtube.com/@electroveda?feature=shared">ELECTROVEDA</a>
     </nav>
 
-    <div class="hero">
-        <h2>Welcome to ECE Notes</h2>
-        <p>Your one-stop platform for Electronics & Communication resources.</p>
-    </div>
-
     <div class="container">
         <h2>Available Notes</h2>
         <div class="note-grid" id="note-grid">
-            <!-- Notes will be dynamically inserted here -->
+            <!-- Notes will be inserted here dynamically -->
         </div>
     </div>
 
     <footer>
-        <h4>Created by Chandan Katiyar</h4>
-        <p>Sharing knowledge to empower the ECE community.</p>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank">🌐</a>
-            <a href="https://twitter.com" target="_blank">🐦</a>
-            <a href="https://linkedin.com" target="_blank">💼</a>
-        </div>
+        <h4>Hello! I'm Chandan Katiyar, a student from the 2023-2027 batch.</h4>
+        <p>Sharing knowledge in the field of Electronics & Communication. Let's grow together!</p>
         <p>© 2024 ECE Notes. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
     </footer>
 
     <script>
         const notes = [
-            { name: "Digital Electronics", image: "https://via.placeholder.com/150", link: "#" },
-            { name: "Signals & Systems", image: "https://via.placeholder.com/150", link: "#" },
-            { name: "Control Systems", image: "https://via.placeholder.com/150", link: "#" },
-            { name: "Analog Circuits", image: "https://via.placeholder.com/150", link: "#" }
+            {
+                name: "Digital Electronics",
+                image: "https://via.placeholder.com/150",
+                link: "https://drive.google.com/your-link1"
+            },
+            {
+                name: "Signals & Systems",
+                image: "https://via.placeholder.com/150",
+                link: "https://drive.google.com/drive/folders/1pBD8LB6EGEjtL_pgGPCpZXtOR5NnRQWk?usp=drive_link"
+            },
+            {
+                name: "Control Systems",
+                image: "https://via.placeholder.com/150",
+                link: "https://drive.google.com/your-link3"
+            }
         ];
 
         const noteGrid = document.getElementById("note-grid");
@@ -228,8 +231,6 @@
             noteGrid.appendChild(noteItem);
         });
     </script>
-
 </body>
 
 </html>
-
