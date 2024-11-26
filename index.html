@@ -1,56 +1,87 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECE Notes - Electronics & Communication Notes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f3f6fa;
             color: #333;
         }
 
         header {
-            background-image: url('https://via.placeholder.com/1920x500'); /* Replace with your header image */
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1c99c3, #125d87);
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 60px 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 40px;
+            font-size: 36px;
             margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1.5px;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #1c99c3;
-            padding: 15px 0;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            color: white;
+            color: #333;
             text-decoration: none;
             font-weight: 500;
-            font-size: 18px;
             margin: 0 15px;
-            transition: all 0.3s ease-in-out;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
         nav a:hover {
-            color: #ffdf00;
-            transform: scale(1.1);
+            color: #1c99c3;
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('https://via.placeholder.com/1500x500') no-repeat center/cover;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .cta-button {
+            padding: 12px 25px;
+            background-color: #ffdf00;
+            color: #333;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #d8bc00;
         }
 
         .container {
@@ -59,11 +90,11 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .container h2 {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 20px;
             text-align: center;
             color: #333;
@@ -76,17 +107,17 @@
         }
 
         .note-item {
-            background-color: #fff;
+            background-color: #f9f9f9;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
 
         .note-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .note-item img {
@@ -97,7 +128,7 @@
         }
 
         .note-item h3 {
-            font-size: 22px;
+            font-size: 20px;
             margin: 15px 0;
             color: #333;
         }
@@ -105,24 +136,25 @@
         .view-note {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #1c99c3;
             color: white;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 500;
-            transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.3s ease;
         }
 
         .view-note:hover {
-            background-color: #218838;
+            background-color: #125d87;
         }
 
         footer {
-            background-color: #2e8b57;
+            background-color: #1c99c3;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             margin-top: 50px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
         }
 
         footer h4 {
@@ -133,18 +165,6 @@
         footer p {
             font-size: 14px;
             margin: 5px 0;
-        }
-
-        footer .social-icons a {
-            margin: 0 10px;
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-icons a:hover {
-            color: #ffdf00;
         }
 
         @media (max-width: 768px) {
@@ -159,10 +179,6 @@
             .note-grid {
                 grid-template-columns: 1fr;
             }
-
-            footer {
-                font-size: 14px;
-            }
         }
     </style>
 </head>
@@ -170,50 +186,38 @@
 <body>
 
     <header>
-        <h1>ECE Notes - Electronics & Communication Study Material</h1>
+        <h1>ECE Notes - Electronics & Communication</h1>
     </header>
 
     <nav>
-        <a href="https://chandank0.github.io/UIET_ECE_NOTES/">GYAN SANCHAY</a>
-        <a href="https://ece-csjmu.github.io/web/semester%20(1).html">B.TECH 1ST SEM</a>
-        <a href="https://youtube.com/@electroveda?feature=shared">ELECTROVEDA</a>
+        <a href="#">GYAN SANCHAY</a>
+        <a href="#">1ST SEM NOTES</a>
+        <a href="#">ELECTROVEDA</a>
     </nav>
 
+    <div class="hero">
+        <h2>Welcome to ECE Notes</h2>
+        <p>Explore our curated collection of Electronics & Communication study materials.</p>
+        <a href="#note-grid" class="cta-button">Get Started</a>
+    </div>
+
     <div class="container">
-        <h2>Available Notes</h2>
-        <div class="note-grid" id="note-grid">
-            <!-- Notes will be inserted here dynamically -->
-        </div>
+        <h2>Explore Notes</h2>
+        <div class="note-grid" id="note-grid"></div>
     </div>
 
     <footer>
-        <h4>Hello! I'm Chandan Katiyar, a student from the 2023-2027 batch.</h4>
-        <p>Sharing knowledge in the field of Electronics & Communication. Let's grow together!</p>
+        <h4>About Us</h4>
+        <p>Created by Chandan Katiyar | Sharing knowledge for a brighter future</p>
         <p>© 2024 ECE Notes. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
     </footer>
 
     <script>
         const notes = [
-            {
-                name: "Digital Electronics",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/your-link1"
-            },
-            {
-                name: "Signals & Systems",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/drive/folders/1pBD8LB6EGEjtL_pgGPCpZXtOR5NnRQWk?usp=drive_link"
-            },
-            {
-                name: "Control Systems",
-                image: "https://via.placeholder.com/150",
-                link: "https://drive.google.com/your-link3"
-            }
+            { name: "Digital Electronics", image: "https://via.placeholder.com/150", link: "#" },
+            { name: "Signals & Systems", image: "https://via.placeholder.com/150", link: "#" },
+            { name: "Control Systems", image: "https://via.placeholder.com/150", link: "#" },
+            { name: "Analog Circuits", image: "https://via.placeholder.com/150", link: "#" },
         ];
 
         const noteGrid = document.getElementById("note-grid");
@@ -231,6 +235,7 @@
             noteGrid.appendChild(noteItem);
         });
     </script>
+
 </body>
 
 </html>
