@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,17 +16,34 @@
         }
 
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background: linear-gradient(135deg, #1c99c3, #125d87);
             color: white;
             padding: 20px;
-            text-align: center;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 36px;
+            font-size: 24px;
             margin: 0;
             letter-spacing: 1.5px;
+        }
+
+        .contribute {
+            background-color: white;
+            color: #1c99c3;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contribute:hover {
+            background-color: #ffdf00;
+            color: #333;
         }
 
         nav {
@@ -53,35 +71,13 @@
         .hero {
             text-align: center;
             padding: 50px 20px;
-            background: url('https://via.placeholder.com/1500x500') no-repeat center/cover;
+            background-color: #125d87;
             color: white;
         }
 
         .hero h2 {
             font-size: 40px;
             margin: 20px 0;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .cta-button {
-            padding: 12px 25px;
-            background-color: #ffdf00;
-            color: #333;
-            font-weight: 600;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .cta-button:hover {
-            background-color: #d8bc00;
         }
 
         .container {
@@ -110,42 +106,7 @@
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-        }
-
-        .note-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .note-item img {
-            max-width: 100%;
-            height: 150px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .note-item h3 {
-            font-size: 20px;
-            margin: 15px 0;
-            color: #333;
-        }
-
-        .view-note {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #1c99c3;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .view-note:hover {
-            background-color: #125d87;
         }
 
         footer {
@@ -154,31 +115,30 @@
             text-align: center;
             padding: 20px;
             margin-top: 50px;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        footer h4 {
-            font-size: 18px;
-            margin: 10px 0;
+        .footer-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s ease;
+            text-decoration: none;
         }
 
-        footer p {
-            font-size: 14px;
-            margin: 5px 0;
+        .footer-icons a:hover {
+            color: #ffdf00;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
+        .extra-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #eef;
+            border-radius: 10px;
+        }
 
-            nav a {
-                margin: 8px 0;
-            }
-
-            .note-grid {
-                grid-template-columns: 1fr;
-            }
+        .extra-section h3 {
+            text-align: center;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -186,7 +146,8 @@
 <body>
 
     <header>
-        <h1>ECE Notes - Electronics & Communication</h1>
+        <h1>ECE Notes</h1>
+        <a href="#" class="contribute">Contribute</a>
     </header>
 
     <nav>
@@ -206,18 +167,32 @@
         <div class="note-grid" id="note-grid"></div>
     </div>
 
+    <div class="container extra-section">
+        <h3>Math Mechanics</h3>
+        <p>Content related to mathematical principles applied in mechanics.</p>
+    </div>
+
+    <div class="container extra-section">
+        <h3>Thermo</h3>
+        <p>Content related to thermodynamics and related concepts.</p>
+    </div>
+
     <footer>
         <h4>About Us</h4>
         <p>Created by Chandan Katiyar | Sharing knowledge for a brighter future</p>
         <p>© 2024 ECE Notes. All rights reserved.</p>
+        <div class="footer-icons">
+            <a href="#" target="_blank" title="Instagram">📷</a>
+            <a href="#" target="_blank" title="LinkedIn">🔗</a>
+        </div>
     </footer>
 
     <script>
         const notes = [
-            { name: "Digital Electronics", image: "https://via.placeholder.com/150", link: "#" },
-            { name: "Signals & Systems", image: "https://via.placeholder.com/150", link: "#" },
-            { name: "Control Systems", image: "https://via.placeholder.com/150", link: "#" },
-            { name: "Analog Circuits", image: "https://via.placeholder.com/150", link: "#" },
+            { name: "Digital Electronics", image: "", link: "#" },
+            { name: "Signals & Systems", image: "", link: "#" },
+            { name: "Control Systems", image: "", link: "#" },
+            { name: "Analog Circuits", image: "", link: "#" },
         ];
 
         const noteGrid = document.getElementById("note-grid");
@@ -227,7 +202,6 @@
             noteItem.classList.add("note-item");
 
             noteItem.innerHTML = `
-                <img src="${note.image}" alt="${note.name}">
                 <h3>${note.name}</h3>
                 <a href="${note.link}" class="view-note" target="_blank">View Notes</a>
             `;
